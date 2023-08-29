@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "app_function": "modulo.app",
+	"keep_warm": false,
+        "role_name": "LabRole",
+        "profile_name": "default",
+	"manage_roles": false,
+	"apigateway_enabled": false,
+        "project_name": "lambda-projects",
+        "runtime": "python3.9",
+        "s3_bucket": "zappa-fvxvi8e20",
+
+       "events": [{
+            "function": "modulo.app",
+            "event_source": {
+                  "arn":  "arn:aws:s3:::alejo2",
+                  "events": [
+                    "s3:ObjectCreated:*"
+                  ],
+               }
+            }],
+    }
+}
